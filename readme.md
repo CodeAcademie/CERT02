@@ -1,4 +1,4 @@
-# Examen de certification : Développer une interface liée à une base de données
+# Examen de certification Développeur Logiciel : CCP 1 - Développer une interface liée à une base de données
 
 Cet examen est  nécessaire à l'évaluation de votre aptitude à passer la certification et ses résultats sont demandés par l'institution l'organisant.
 
@@ -10,3 +10,4 @@ Selon le react, il vous est demandé que :
 - le jeu d'essai fonctionnel est complet.
 - Le code source des composants est documenté.
 - Les bonnes pratiques de développement objet sont respectés.
+- L'ensemble des tests unitaires sont valides
