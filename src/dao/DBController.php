@@ -29,7 +29,9 @@ namespace DAO;
 		public function __construct()
 		{
 			# Connect to Database..
+			
 		}
+
 
 		/**
 		 * Function which verifies that the given account exists 
@@ -88,6 +90,19 @@ namespace DAO;
 				$handle->execute();
 			}
 			return $loggedIn;
+		}
+
+		public function getDebts($user_id = 1){
+			$query = "select t_debts.id, t_debts.amount, t_debts.name as 'debt_name', t_debts.state, t_users.email, t_groups.name as 'group_name' 
+				from t_debts, t_users, t_groups
+				where t_users.id = :user_id
+				and t_users.id = t_debts.owner
+				and t_users.groupid = t_groups.id";
+			$handle = $this->db->prepare($query);
+			$handle->bindParam(':user_id', $user_id);
+			$handle->execute();	
+			$result = $handle->fetchAll(\PDO::FETCH_ASSOC);
+			return $result;
 		}
 	}
 	?>
